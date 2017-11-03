@@ -1,0 +1,30 @@
+{
+    "name": "equicolor/yii2-value-objects",
+    "version": "1.0.0",
+    "keywords": [
+        "yii2",
+        "json",
+        "ddd"
+    ],
+    "type": "yii2-extension",
+    "description": "Easy to store nested objects and typed collections in AR",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/equicolor/yii2-value-objects/issues",
+        "source": "https://github.com/equicolor/yii2-value-objects"
+    },
+    "authors": [
+        {
+            "name": "Artem Feschenko",
+            "email": "eqcolor@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "equicolor/valueObjects\\": ""
+        }
+    }
+}
