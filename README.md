@@ -45,7 +45,7 @@ class Offer extends ValueObject {
     public $title;
     public $status;
 
-    public static function valueObjects() {
+    public static function valueObjects($model) {
         return [
             'goals' => ValueObjectList::create(Goal::className()),
             'targeting' => new class extends ValueObject {

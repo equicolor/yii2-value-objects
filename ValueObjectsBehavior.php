@@ -33,7 +33,7 @@ class ValueObjectsBehavior extends \yii\base\Behavior {
                 // у самых глубоких объектов не будет такого метода
                 $attributes = [];
             } else {
-                $attributes = $class::valueObjects();
+                $attributes = $class::valueObjects($this->owner);
             }
             self::$classMap[$class] = $attributes;
         }
