@@ -141,4 +141,12 @@ class ValueObject extends Component implements IValueObject {
         }
         return isset($attributes[$name]) || isset($this->_oldAttributes[$name]);
     }
+    
+    public function getOldAttribute($attr) {
+        return $this->_oldAttributes[$attr];
+    }
+
+    public function getAttribute($attr) {
+        return $this->$attr;
+    }
 }
