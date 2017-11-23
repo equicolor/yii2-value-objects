@@ -131,7 +131,9 @@ $campaign->save();
 ```
 
 # Roadmap
+* Refactoring
 * Tests
+* Proper error handling
 * Validation
 * Separate serealization engine
 
