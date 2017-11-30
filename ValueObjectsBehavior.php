@@ -84,7 +84,11 @@ class ValueObjectsBehavior extends \yii\base\Behavior {
     }
 
     protected function createObject($attribute, $class) {
-        return new $class;
+        if ($class instanceOf ValueObjectList) {
+            return $class;
+        } else {
+            return new $class;
+        }
     }
 
     protected function createJson($attribute) {

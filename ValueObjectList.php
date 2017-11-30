@@ -7,21 +7,26 @@ use yii\base\ArrayAccessTrait;
 class ValueObjectList implements \ArrayAccess, \IteratorAggregate, IValueObject
 {
     use ArrayAccessTrait;
-
+    
     private $data;
-    public static $valueObjectClassName;
 
     public static function create($className)
     {
-        $class = new class extends ValueObjectList {};
-        $class::$valueObjectClassName = $className;
+        $class = new class ($className) extends ValueObjectList {
+            public $valueObjectClassName;
+
+            public function __construct($className) {
+                $this->valueObjectClassName = $className;
+            }
+        };
+
         return $class;
     }
 
     public function setAttributes($data)
     {
         $this->data = [];
-        $class = static::$valueObjectClassName;
+        $class = $this->valueObjectClassName;
         foreach ($data as $item) {
             $newItem = new $class;
             $newItem->setAttributes($item);
